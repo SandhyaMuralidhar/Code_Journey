@@ -1,6 +1,6 @@
 class Solution:
     def maximumGain(self, s: str, x: int, y: int) -> int:
-        
+
         total_points = 0
         s = list(s)
 
@@ -26,7 +26,7 @@ class Solution:
             # Add the current character
             input_string[write_index] = input_string[read_index]
             write_index += 1
-
+           
             # Check if we've written at least two characters and
             # they match the target substring
             if (
