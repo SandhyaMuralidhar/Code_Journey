@@ -2,10 +2,9 @@ class Solution:
     def luckyNumbers (self, matrix: List[List[int]]) -> List[int]:
         m=len(matrix)
         n = len(matrix[0])
-        print(m,n)
         lis1 = []
         out=[]
-        lis2= []
+       
         for i in range(m):
             min_ele= float('inf')
             for j in range(n):
