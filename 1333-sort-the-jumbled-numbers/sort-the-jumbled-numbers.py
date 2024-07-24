@@ -6,8 +6,7 @@ class Solution:
             if n>9:
                 MAP_VAL = ''
                 for val in str(n):
-                    print(val)
-                    print(mapping[int(val)])
+                    
                     MAP_VAL+=str(mapping[int(val)])
                     d[n] = int(MAP_VAL)
             else:
