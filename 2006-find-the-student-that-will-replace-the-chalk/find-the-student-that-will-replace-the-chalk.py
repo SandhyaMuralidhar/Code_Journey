@@ -9,15 +9,26 @@ class Solution:
         #             i=0
         # return i
 
+        # sum_chalk = 0
+        # for i in range(len(chalk)):
+        #     sum_chalk += chalk[i]
+        #     if sum_chalk > k:
+        #         break
+        # # Find modulo of k with sum.
+        # k = k % sum_chalk
+        # for i in range(len(chalk)):
+        #     if k < chalk[i]:
+        #         return i
+        #     k -= chalk[i]
+        # return 0
+
         sum_chalk = 0
         for i in range(len(chalk)):
-            sum_chalk += chalk[i]
-            if sum_chalk > k:
-                break
-        # Find modulo of k with sum.
-        k = k % sum_chalk
+            sum_chalk+= chalk[i]
+
+        k = k% sum_chalk
         for i in range(len(chalk)):
-            if k < chalk[i]:
+            if k<chalk[i]:
                 return i
-            k -= chalk[i]
+            k-=chalk[i]
         return 0
