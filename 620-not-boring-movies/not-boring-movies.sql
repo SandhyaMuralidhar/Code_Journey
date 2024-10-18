@@ -1,0 +1,2 @@
+/* Write your PL/SQL query statement below select c.id, c.movie, c.description, c.rating from Cinema c where MOD(c.id,2)=1 and c.description not like '%boring%' order by 4 desc*/
+select * from cinema where mod(id,2)=1 and description not like '%boring%' order by 4 desc;
