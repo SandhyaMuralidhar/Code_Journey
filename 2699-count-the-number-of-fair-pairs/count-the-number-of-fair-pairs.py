@@ -3,8 +3,6 @@ class Solution:
         nums.sort()
         return self.lower_bound(nums, upper + 1) - self.lower_bound(nums, lower)
 
-    
-
     # Calculate the number of pairs with sum less than `value`.
     def lower_bound(self, nums: List[int], value: int) -> int:
         left = 0
