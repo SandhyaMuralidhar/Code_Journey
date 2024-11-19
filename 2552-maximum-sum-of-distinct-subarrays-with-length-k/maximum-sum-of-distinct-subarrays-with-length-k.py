@@ -1,21 +1,21 @@
 class Solution:
     def maximumSubarraySum(self, nums: List[int], k: int) -> int:
-        ans = 0
-        current_sum = 0
-        begin = 0
-        end = 0
-        num_to_index = {}
+        ans=0
+        start=0
+        end=0
+        num_to_index={}
+        sumnumbers=0
 
-        while end < len(nums):
-            curr_num = nums[end]
-            last_occurrence = num_to_index.get(curr_num, -1)
-            # if current window already has number or if window is too big, adjust window
-            while begin <= last_occurrence or end - begin + 1 > k:
-                current_sum -= nums[begin]
-                begin += 1
-            num_to_index[curr_num] = end
-            current_sum += nums[end]
-            if end - begin + 1 == k:
-                ans = max(ans, current_sum)
-            end += 1
+        while end<(len(nums)):
+            number=nums[end]
+            last_occurence=num_to_index.get(number,-1)
+            
+            while last_occurence>=start or end-start+1>k:
+                sumnumbers-=nums[start]
+                start+=1
+            num_to_index[number]=end
+            sumnumbers+=number
+            if end-start+1==k:
+                ans=max(ans,sumnumbers)
+            end+=1
         return ans
