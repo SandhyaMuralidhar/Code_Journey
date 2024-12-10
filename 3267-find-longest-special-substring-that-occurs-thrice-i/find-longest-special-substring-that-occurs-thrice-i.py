@@ -11,9 +11,11 @@ class Solution:
                     count[(character,character_count)]=count.get((character,character_count),0)+1
                 else:
                     break
+        print(count)    
         ans = 0
         for i in count.items():
             length = i[0][1]
+            print(i[0],i[0][1])
             if i[1] >= 3 and length > ans:
                 ans = length
         if ans == 0:
