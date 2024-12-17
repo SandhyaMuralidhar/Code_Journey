@@ -1,20 +1,21 @@
 class Solution:
     def repeatLimitedString(self, s: str, repeatLimit: int) -> str:
-        max_heap = [(-ord(c), cnt) for c, cnt in Counter(s).items()]
-        heapify(max_heap)
-        result = []
-
+        max_heap=[(-ord(c),count) for c, count in Counter(s).items()]
+        heapq.heapify(max_heap)
+        res=[]
         while max_heap:
-            char_neg, count = heappop(max_heap)
-            char = chr(-char_neg)
-            use = min(count, repeatLimit)
-            result.append(char * use)
+            char, count =heappop(max_heap)
+            char = chr(-char)
+            cur_taken= min(count, repeatLimit)
+            res.append(char*(cur_taken))
+            if count-cur_taken>0 and max_heap:
+                next_char, next_count = heappop(max_heap)
+                next_char=chr(-next_char)
+                res.append(next_char)
+                if next_count>1:
+                    heappush(max_heap,(-ord(next_char),next_count-1))
+            
+                heappush(max_heap,(-ord(char),count-cur_taken))
+        return ''.join(res)
 
-            if count > use and max_heap:
-                next_char_neg, next_count = heappop(max_heap)
-                result.append(chr(-next_char_neg))
-                if next_count > 1:
-                    heappush(max_heap, (next_char_neg, next_count - 1))
-                heappush(max_heap, (char_neg, count - use))
 
-        return "".join(result)
