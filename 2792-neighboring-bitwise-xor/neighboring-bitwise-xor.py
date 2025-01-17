@@ -26,6 +26,6 @@ class Solution:
         orig=[0]
         for i in range(len(derived)-1):
             orig.append(orig[i]^derived[i])
-        print(orig)
+        #print(orig)
 
         return orig[0]^orig[-1]==derived[-1]
