@@ -12,18 +12,18 @@ class Solution:
 
         for i in range(rows):
             for j in range(cols):
-                min_height_diff=inf
+                min_neighbor_height_diff=inf
                 neighbor_row=i-1
                 neighbor_col=j
                 if self.is_valid_cell(neighbor_row,neighbor_col,rows,cols):
-                    min_height_diff=min(min_height_diff,cell_height[neighbor_row][neighbor_col])
+                    min_neighbor_height_diff=min(min_neighbor_height_diff,cell_height[neighbor_row][neighbor_col])
                     
                 
                 neighbor_row=i
                 neighbor_col=j-1
                 if self.is_valid_cell(neighbor_row,neighbor_col,rows,cols):
-                    min_height_diff=min(min_height_diff,cell_height[neighbor_row][neighbor_col])
-                cell_height[i][j]=min(cell_height[i][j],min_height_diff+1)
+                    min_neighbor_height_diff=min(min_neighbor_height_diff,cell_height[neighbor_row][neighbor_col])
+                cell_height[i][j]=min(cell_height[i][j],min_neighbor_height_diff+1)
 
         for i in range(rows-1,-1,-1):
             for j in range(cols-1,-1,-1):
