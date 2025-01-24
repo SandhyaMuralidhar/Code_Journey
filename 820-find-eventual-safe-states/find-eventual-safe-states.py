@@ -1,19 +1,22 @@
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
-        dp = {}
+        safe={}
+        def dfs(i):
+            if i in safe:
+                return safe[i]
+            safe[i]=False
+            for neighbor in graph[i]:
+                if not dfs(neighbor):
+                    return safe[i]
+            safe[i]=True
+            return safe[i]
 
-        def dfs(node):
-            if node in dp: return dp[node]
+        n=len(graph)
+        res=[]
+
+        for i in range(n):
+            if dfs(i):
+                res.append(i)
+        return res
+
         
-            if len(graph[node]) == 0: return True 
-            
-            dp[node] = False
-            
-            for neighbour in graph[node]:
-                if not dfs(neighbour): return dp[node]
-                
-            dp[node] = True
-            return dp[node]
-                
-        res = [i for i in range(len(graph)) if dfs(i)]
-        return res 
