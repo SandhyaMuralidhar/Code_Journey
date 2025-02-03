@@ -8,7 +8,6 @@ class Solution:
             count=1
             j=i+1
             while(j<=len(nums)-1 and nums[i]<nums[j]):
-                print("inc",nums[i],nums[j])
                 i+=1
                 j+=1
                 count+=1
@@ -17,7 +16,6 @@ class Solution:
             count=1
             j=i+1
             while(j<=len(nums)-1 and nums[i]>nums[j]):
-                print("dec",nums[i],nums[j])
                 i+=1
                 j+=1
                 count+=1
@@ -25,7 +23,6 @@ class Solution:
             count=1
             j=i+1
             while(j<=len(nums)-1 and nums[i]==nums[j]):
-                print("equal",nums[i],nums[j])
                 i+=1
                 j+=1
              
