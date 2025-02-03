@@ -13,10 +13,8 @@ class Solution:
                 i+=1
                 j+=1
             i+=1
-            # print(nums[start:j])
-            # print(nums[start:j] in s)
+            
             out=nums[j:]+nums[:j]
-            #if nums[start:j] in s:
             if out==s:
                 count+=1
             #print(count)
