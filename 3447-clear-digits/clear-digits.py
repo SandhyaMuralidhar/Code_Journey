@@ -11,7 +11,7 @@ class Solution:
                         break
                     j-=1
             i+=1
-            print(s_array)
+            #print(s_array)
         out=''
         i=0
         while i<len(s):
